@@ -1,3 +1,11 @@
+import Card from "./components/Card.jsx";
+import Header from "./components/Header.jsx";
+
 export default function App() {
-  return <h1>Hello React</h1>;
+  return (
+    <>
+      <Header />
+      <Card />
+    </>
+  );
 }
