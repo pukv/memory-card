@@ -1,9 +1,101 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   height: 100vh;
   width: 100%;
+  font-family:
+    "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+    Arial, sans-serif;
+  background: #fafafa;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.header {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+@media (max-width: 480px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .card-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+.card {
+  background: #f3f3f3;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  border-color: #dcdcdc;
+}
+
+.card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: #333;
 }
