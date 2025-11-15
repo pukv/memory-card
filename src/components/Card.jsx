@@ -1,10 +1,8 @@
-import dummyImg from "../assets/dummy-img.png";
-
-export default function Card() {
+export default function Card({ card, onClick }) {
   return (
-    <div className="card">
-      <img src={dummyImg} alt="dummy-img" />
-      <p>Charizard</p>
+    <div className="card" onClick={onClick}>
+      <img src={card.image} alt={card.name} />
+      <p>{card.name}</p>
     </div>
   );
 }
