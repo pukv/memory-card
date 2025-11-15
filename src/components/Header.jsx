@@ -1,8 +1,10 @@
-export default function Header() {
+export default function Header({ score, bestScore }) {
   return (
     <div className="header">
-      <h1>Welcome to Memory Card game</h1>
-      <p>made with React</p>
+      <h1>Pokémon Memory Game</h1>
+      <p>
+        Score: {score} | Best Score: {bestScore}
+      </p>
     </div>
   );
 }
