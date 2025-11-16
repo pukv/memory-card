@@ -99,3 +99,42 @@ body {
   text-transform: capitalize;
   color: #333;
 }
+
+.difficulty-selector {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.difficulty-selector select {
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #dcdcdc;
+  background: #fafafa;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  appearance: none; /* removes default browser arrow */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.difficulty-selector select {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 18px;
+}
+
+.difficulty-selector select:hover {
+  background-color: #f0f0f0;
+  border-color: #c7c7c7;
+  transform: translateY(-2px);
+}
+
+.difficulty-selector select:focus {
+  border-color: #8bb9ff;
+  box-shadow: 0 0 0 3px rgba(120, 170, 255, 0.4);
+}
