@@ -1,3 +1,42 @@
+:root {
+  --poke-red: #ff4d4d;
+  --poke-dark: #222831;
+  --poke-light: #f7f7f7;
+  --poke-gray: #dfe4ea;
+  --poke-blue: #3e8dfd;
+  --poke-yellow: #f5d547;
+}
+
+.header {
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  color: var(--poke-dark);
+  text-shadow: 1px 1px 0px var(--poke-gray);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 0.7rem;
+}
+
+.score,
+.best-score {
+  background: var(--poke-yellow);
+  padding: 0.4rem 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--poke-dark);
+  border: 2px solid #e2c545;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
