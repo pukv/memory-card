@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header.jsx";
 import CardGrid from "./components/CardGrid.jsx";
+import DifficultySelector from "./components/DifficultySelector.jsx";
 
 export default function App() {
   const [cards, setCards] = useState([]);
   const [guess, setGuess] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [difficulty, setDifficulty] = useState("easy");
 
   useEffect(() => {
     async function fetchPokemons() {
-      const ids = [3, 6, 9, 25, 39, 143, 133, 150, 196, 212];
+      const count =
+        difficulty === "easy" ? 10 : difficulty === "medium" ? 15 : 20;
+
+      const ids = Array.from(
+        { length: count },
+        () => Math.floor(Math.random() * 898) + 1
+      );
+
       const promises = ids.map((id) =>
         fetch(`https://pokeapi.co/api/v2/pokemon/${id}`).then((res) =>
           res.json()
@@ -26,10 +35,12 @@ export default function App() {
       }));
 
       setCards(formatted);
+      setGuess([]);
+      setScore(0);
     }
 
     fetchPokemons();
-  }, []);
+  }, [difficulty]);
 
   function shuffleArray(array) {
     const arr = [...array];
@@ -58,6 +69,10 @@ export default function App() {
   return (
     <>
       <Header score={score} bestScore={bestScore} />
+      <DifficultySelector
+        difficulty={difficulty}
+        setDifficulty={setDifficulty}
+      />
       <CardGrid cards={cards} handleCardClick={handleCardClick} />
     </>
   );
